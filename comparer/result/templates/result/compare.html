@@ -3,12 +3,16 @@
 {% block content %}
 
 <style>
+html {
+    background-color: azure;
+}
+.container-fluid {
+    background-color: azure;
+}
 #compare {
     width: fit-content;
 }
-.container {
-    display: inline;
-}
+
 #id_ingredients {
     height: 200px;
     width: 300px;
@@ -21,7 +25,8 @@
     height: 100%;
 }
 .back_button {
-    float: left;
+    right: 15px;
+    position: absolute;
 }
 .back_button_text {
     color: black
@@ -31,35 +36,60 @@
 }
 h5 {
     text-align: center;
+    width: fit-content;
 }
 .row{
     justify-content: center;
     display: inline;
 }
-@media screen and (max-width:752px) {
+.add_item {
+    position: absolute;
+    left: 10px;
+}
+.sub_btn {
+    position: absolute;
+    left: 10px;
+}
+@media screen and (max-width:775px) {
     .col {
     margin-left: 50%;
     margin-right: 50%;
 }
-
 </style>
 
-<h4>Please enter in your ingredients:</h4>
-
-<h6>(Seperate each item by comma)</h6>
-
-<br>
-
-<button class="add_item">Add Item</button>
+    <div class="container-fluid">
 
 
-        <div class="container">
 
-                <div class="row row-cols-1 row-cols-md-2 mx-auto">
+        <h4>Please enter in your ingredients:</h4>
+
+        <h6>(Seperate each item by comma)</h6>
+
+        <br>
+
+        <button class="add_item">Add Item</button>
+        <br>
+
+            
+
+            <div class="row row-cols-1 row-cols-md-2 mx-auto">
                             
                             
-                        <form action="{% url 'compare_ingredients' %}" method="post" id="compare">
+                    <form action="{% url 'compare_ingredients' %}" method="post" id="compare">
                             {% csrf_token %}
+
+                            <br>
+                            <button type="submit" class="btn btn-info sub_btn">Submit</button>
+                            
+
+                            
+                            <button type="submit" class="btn btn-secondary back_button">
+                            <a href="{% url 'home' %}" class="back_button_text">Back</a>
+                            </button>
+                            <br>
+
+
+                            <br>
                             <div class="row form_row">
                                     <div class="col mb-4">
                                         <h5>Item 1</h5>
@@ -87,24 +117,17 @@ h5 {
                             </div>    
                                 
                                
-                            <br>
-
-                            <button type="submit" class="btn btn-info">Submit</button>
-                        </form>
+                            
+                    </form>
      
                 
-                </div>
+            </div>
  
                             
-        </div>
+      
         
         
-        <button type="submit" class="btn btn-secondary back_button">
-            <a href="{{request.META.HTTP_REFERER}}" class="back_button_text">Back</a>
-        </button>
-
-
-     
+    </div>
 
 <!--
 <script>
@@ -113,7 +136,6 @@ h5 {
     };
 </script>
 -->
-
 
 
 {% endblock content %}

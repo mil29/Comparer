@@ -1,14 +1,18 @@
 $(document).ready(function(){
 
-    $("button.add_item").on("click",function(){
+$("button.add_item").on("click",function(){
 
-    let item_count = $('.container .compare_card').length;
+let item_count = $('.container-fluid .compare_cardbody').length;
 
-    $(".row:last").after(
+if ($("#compare > .row:last > .col").length === 2)
+{
+  $("#compare").append('<div class="row form_row"></div>');
+} 
+
+    $("#compare > .row:last").append(
         `
-        <div class="row form_row">
             <div class="col mb-4">
-                    <h5>Item</h5>
+                <h5>Item${item_count+1}</h5>
                 <div class="card form_card">
                     <div class="card-body compare_cardbody">
 
@@ -17,9 +21,7 @@ $(document).ready(function(){
                     </div>
                 </div>    
             </div>
-        </div>
         `
             );
-           })
+    })
 })
-
