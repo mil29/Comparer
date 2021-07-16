@@ -75,7 +75,7 @@ h5 {
             <div class="row row-cols-1 row-cols-md-2 mx-auto">
                             
                             
-                    <form action="{% url 'compare_ingredients' %}" method="post" id="compare">
+                    <form action="{% url 'compare_ingredients' %}" method="POST" name="compareform" id="compare">
                             {% csrf_token %}
 
                             <br>
@@ -95,29 +95,26 @@ h5 {
                                         <h5>Item 1</h5>
                                         <div class="card form_card">
                                             <div class="card-body compare_cardbody">
-                                                <textarea name="ingredients" id="" cols="30" rows="10"></textarea>
+                                                <textarea name="ingredients1" id="ingredients" cols="30" rows="10" form="compareform"></textarea>
                                                 
                                             </div>
                                         </div>    
                                     </div>
                                 
                                     
-                                
-
                               
                                     <div class="col mb-4">
                                         <h5>Item 2</h5>
                                         <div class="card form_card">
                                             <div class="card-body compare_cardbody">
-                                                <textarea name="ingredients" id="" cols="30" rows="10"></textarea>
+                                                <textarea name="ingredients2" id="ingredients" cols="30" rows="10" form="compareform"></textarea>
                                                 
                                             </div>
                                         </div>    
                                     </div>
                             </div>    
                                 
-                               
-                            
+                                                       
                     </form>
      
                 

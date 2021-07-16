@@ -9,6 +9,13 @@ def home(request):
 
 
 def compare_ingredients(request):
+    if request.method == "POST":
+
+        ingredients = request.POST.get('ingredients')
+
+        print(ingredients)
         
-        
+    
     return render(request, 'result/compare.html')
+
+
