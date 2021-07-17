@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from django.http import HttpResponse
 
 
 
@@ -11,11 +11,12 @@ def home(request):
 def compare_ingredients(request):
     if request.method == "POST":
 
-        ingredients = request.POST.get('ingredients')
+        ingredients1 = request.POST.get('ingredients1')
+        ingredients2 = request.POST.get('ingredients2')
 
-        print(ingredients)
-        
-    
+        print(ingredients1, ingredients2)
+
     return render(request, 'result/compare.html')
+
 
 

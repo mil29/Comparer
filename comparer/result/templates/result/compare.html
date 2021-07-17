@@ -70,7 +70,10 @@ h5 {
         <button class="add_item">Add Item</button>
         <br>
 
-            
+        <button type="submit" class="btn btn-secondary back_button">
+            <a href="{% url 'home' %}" class="back_button_text">Back</a>
+        </button>
+        <br>
 
             <div class="row row-cols-1 row-cols-md-2 mx-auto">
                             
@@ -83,19 +86,13 @@ h5 {
                             
 
                             
-                            <button type="submit" class="btn btn-secondary back_button">
-                            <a href="{% url 'home' %}" class="back_button_text">Back</a>
-                            </button>
-                            <br>
-
-
                             <br>
                             <div class="row form_row">
                                     <div class="col mb-4">
                                         <h5>Item 1</h5>
                                         <div class="card form_card">
                                             <div class="card-body compare_cardbody">
-                                                <textarea name="ingredients1" id="ingredients" cols="30" rows="10" form="compareform"></textarea>
+                                                <textarea name="ingredients1" id="ingredients" cols="30" rows="10" form="compare"></textarea>
                                                 
                                             </div>
                                         </div>    
@@ -107,7 +104,7 @@ h5 {
                                         <h5>Item 2</h5>
                                         <div class="card form_card">
                                             <div class="card-body compare_cardbody">
-                                                <textarea name="ingredients2" id="ingredients" cols="30" rows="10" form="compareform"></textarea>
+                                                <textarea name="ingredients2" id="ingredients" cols="30" rows="10" form="compare"></textarea>
                                                 
                                             </div>
                                         </div>    
