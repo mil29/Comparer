@@ -16,7 +16,9 @@ if ($("#compare > .row:last > .col").length === 2)
                 <div class="card form_card">
                     <div class="card-body compare_cardbody">
 
-                        <textarea name="ingredients" id="ingredients" cols="30" rows="10"></textarea>
+                        <textarea style="resize: none;" name="ingredients${item_count+1}" id="ingredients" cols="30" rows="1" placeholder="Enter Product name"></textarea>
+
+                        <textarea style="resize: none;" name="ingredients${item_count+1}" id="ingredients" cols="30" rows="10" placeholder="Enter ingredients" ></textarea>
                         
                     </div>
                 </div>    

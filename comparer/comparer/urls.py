@@ -8,6 +8,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', result_views.home, name='home'),
     path('compare-ingredients/', result_views.compare_ingredients, name='compare_ingredients'),
+    path('results/', result_views.results, name='results'),
+
 ]
 
 
