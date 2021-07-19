@@ -10,39 +10,51 @@ def home(request):
 
 def compare_ingredients(request):
 
+    if request.method == 'POST':
+
+        ing1 = request.POST.getlist('ingredients1')
+        ing2 = request.POST.getlist('ingredients2')
+        ing3 = request.POST.getlist('ingredients3')
+        ing4 = request.POST.getlist('ingredients4')
+        ing5 = request.POST.getlist('ingredients5')
+        ing6 = request.POST.getlist('ingredients6')
+        ing7 = request.POST.getlist('ingredients7')
+        ing8 = request.POST.getlist('ingredients8')
+        ing9 = request.POST.getlist('ingredients9')
+        ing10 = request.POST.getlist('ingredients10')
+
+        ing1list = []
+        for ele in ing1[1:]:
+            ele_split = ele.split(",")
+            for ele2 in ele_split:
+                ing1list.append(ele2.strip().lower())
+
+        print(ing1list)
 
 
-    ingredients1 = request.POST.getlist('ingredients1')
-    ingredients2 = request.POST.getlist('ingredients2')
-    ingredients3 = request.POST.getlist('ingredients3')
-    ingredients4 = request.POST.getlist('ingredients4')
-    ingredients5 = request.POST.getlist('ingredients5')
-    ingredients6 = request.POST.getlist('ingredients6')
-    ingredients7 = request.POST.getlist('ingredients7')
-    ingredients8 = request.POST.getlist('ingredients8')
-    ingredients9 = request.POST.getlist('ingredients9')
-    ingredients10 = request.POST.getlist('ingredients10')
 
-    if len(ingredients1) >= 1:
+    
+        context = {
+            'ing1': ing1,
+            'ing2': ing2,
+            'ing3': ing3,
+            'ing4': ing4,
+            'ing5': ing5,
+            'ing6': ing6,
+            'ing7': ing7,
+            'ing8': ing8,
+            'ing9': ing9,
+            'ing10': ing10,
+        }
 
 
-        return redirect('results')
+
+        return render(request, 'result/results.html', context)
         
 
     return render(request, 'result/compare.html')
 
 
-
-
-def results(request):
-    ingredients1 = request.POST.getlist('ingredients1')
-
-    context = {
-        'ingredients1': ingredients1,
-    }
-
-
-    return render(request, 'result/results.html', context)
 
 
 

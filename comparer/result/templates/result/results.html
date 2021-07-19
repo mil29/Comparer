@@ -1,9 +1,21 @@
 {% extends 'base.html' %} {% load static %}
 {% block content %}
 
-{% for item in ingredients1 %}
-    {{ item }}
+<h1>Results</h1>
+
+{% for title in ing1 %}
+{% if forloop.first %}
+    <h1>{{ title }}</h1>
+{% endif %}
 {% endfor %}
+
+
+{% for item in ing1 %}
+{% if not forloop.first %}
+{{ item }}
+{% endif %}
+{% endfor %}
+
 
 
 
