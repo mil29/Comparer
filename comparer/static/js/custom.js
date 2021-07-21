@@ -33,4 +33,16 @@ if ($("#compare > .row:last > .col").length === 2)
             );
     })
 
+
+
+$("button.remove_item").on("click",function(){
+
+    let item_count = $('.container-fluid .compare_cardbody').length;
+
+    if (item_count > 2) {
+
+        $("#compare > .row > .col:last").remove();
+    }
+
+    })
 })

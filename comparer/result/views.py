@@ -62,48 +62,82 @@ def compare_ingredients(request):
 
 
         if len(set2) >= 1 and len(set3) < 1:
-            match1 = set1.intersection(set2)
-            print(f'Item 1 and Item 2 both have: {match1}')
+            match1_2 = set1.intersection(set2)
+            print(f'Item 1 and Item 2 both have: {match1_2}')
 
         if len(set3) >= 1 and len(set4) < 1:
-            match1 = set1.intersection(set2)
-            match2 = set1.intersection(set3)
-            match3 = set2.intersection(set3)
-            All = set.intersection(set1, set2, set3)
-            print(f'Item 1 and Item 2 both have: {match1}')
-            print(f'Item 1 and Item 3 both have: {match2}')
-            print(f'Item 2 and Item 3 both have: {match3}')
-            print(f'All Items have: {All}')
+            match1_2 = set1.intersection(set2)
+            match1_3 = set1.intersection(set3)
+            match2_3 = set2.intersection(set3)
+            All_1_2_3 = set.intersection(set1, set2, set3)
+            print(f'Item 1 and Item 2 both have: {match1_2}')
+            print(f'Item 1 and Item 3 both have: {match1_3}')
+            print(f'Item 2 and Item 3 both have: {match2_3}')
+            print(f'All Items have: {All_1_2_3}')
 
         if len(set4) >= 1:
-            match1 = set1.intersection(set2)
-            match2 = set1.intersection(set3)
-            match3 = set1.intersection(set4)
-            match4 = set2.intersection(set3)
-            match5 = set2.intersection(set4)
-            match6 = set3.intersection(set4)
-            All    = set.intersection(set1, set2, set3, set4)
-            print(f'Item 1 and Item 2 both have: {match1}')
-            print(f'Item 1 and Item 3 both have: {match2}')
-            print(f'Item 1 and Item 4 both have: {match3}')
-            print(f'Item 2 and Item 3 both have: {match4}')
-            print(f'Item 2 and Item 4 both have: {match5}')
-            print(f'Item 3 and Item 4 both have: {match6}')
-            print(f'All Items have: {All}')
+            match1_2 = set1.intersection(set2)
+            match1_3 = set1.intersection(set3)
+            match1_4 = set1.intersection(set4)
+            match2_3 = set2.intersection(set3)
+            match2_4 = set2.intersection(set4)
+            match3_4 = set3.intersection(set4)
+            All_1_2_3_4    = set.intersection(set1, set2, set3, set4)
+            print(f'Item 1 and Item 2 both have: {match1_2}')
+            print(f'Item 1 and Item 3 both have: {match1_3}')
+            print(f'Item 1 and Item 4 both have: {match1_4}')
+            print(f'Item 2 and Item 3 both have: {match2_3}')
+            print(f'Item 2 and Item 4 both have: {match2_4}')
+            print(f'Item 3 and Item 4 both have: {match3_4}')
+            print(f'All Items have: {All_1_2_3_4}')
 
 
         inglist = zip(ing1, ing2, ing3, ing4)
+
+        if len(ing3) < 1:
+
+            context0 = {
+                'ing1': ing1,
+                'ing2': ing2,
+                'inglist': inglist,
+                'match1_2': match1_2,
+            }
+
+            return render(request, 'result/results.html', context0)
         
-        context = {
-            'ing1': ing1,
-            'ing2': ing2,
-            'ing3': ing3,
-            'ing4': ing4,
-            'inglist': inglist,
-        }
+        if len(ing3) > 1 and len(ing4) < 1:
 
+            context1 = {
+                'ing1': ing1,
+                'ing2': ing2,
+                'ing3': ing3,
+                'inglist': inglist,
+                'match1_2': match1_2,
+                'match1_3': match1_3,
+                'match2_3': match2_3,
+                'All_1_2_3': All_1_2_3,
+            }
 
-        return render(request, 'result/results.html', context)
+            return render(request, 'result/results.html', context1)
+        
+        if len(ing4) > 1:
+
+            context2 = {
+                'ing1': ing1,
+                'ing2': ing2,
+                'ing3': ing3,
+                'ing4': ing4,
+                'inglist': inglist,
+                'match1_2': match1_2,
+                'match1_3': match1_3,
+                'match2_3': match2_3,
+                'match1_4': match1_4,
+                'match2_4': match2_4,
+                'match3_4': match3_4,
+                'All_1_2_3_4': All_1_2_3_4,
+            }
+
+            return render(request, 'result/results.html', context2)
         
 
     return render(request, 'result/compare.html')
