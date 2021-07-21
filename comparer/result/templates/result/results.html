@@ -1,26 +1,30 @@
 {% extends 'base.html' %} {% load static %}
 {% block content %}
 
-<h1>Results</h1>
+<div class="container-fluid">
 
-{% for title in ing1 %}
-{% if forloop.first %}
-    <h1>{{ title }}</h1>
-{% endif %}
-{% endfor %}
-
-
-{% for item in ing1 %}
-{% if not forloop.first %}
-{{ item }}
-{% endif %}
-{% endfor %}
+    <h1>Results</h1>
 
 
 
+    <div class="row row-cols-1 row-cols-md-2 mx-auto">
+
+        <div class="col mb-4">
+    {% for item1 in ing1 %}
+            <div class="card">
+                <div class="card-body">
+                    {{ item1 }}
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+
+    </div>
+
+    
 
 
-
+</div>
 
 
 
