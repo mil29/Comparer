@@ -1,6 +1,25 @@
 {% extends 'base.html' %} {% load static %}
 {% block content %}
 
+{% block jsfiles %}
+<script>
+
+// function to display a container after user clicks on data buttons at top of page
+
+$(document).ready(function(){
+    $('#data1').click(function () {
+        $('.all_info').show();
+        $('.charts1').hide();
+    });
+    $('#data2').click(function () {
+        $('.charts1').show();
+        $('.all_info').hide();
+    });
+});
+ 
+</script>
+{% endblock jsfiles %}
+
 <style>
 .card {
     box-shadow: 4px 4px 8px 0 rgba(0,0,0,0.2); 
@@ -33,12 +52,57 @@
     color: rgb(181, 14, 14);
     text-transform: uppercase;
 }
+.data_btns_container {
+    display: inline;
+    margin-left: auto;
+    margin-right: auto;
+    align-content: center;
+    text-align: center;
+}
+.data_btns_group {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-content: center;
+
+}
+.data_btns_inside {
+    width: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: sans-serif;
+    color: rgb(189, 192, 192);
+    background-color: rgb(54, 58, 66);
+}
+.data_btns_inside:hover {
+    color: rgb(11, 141, 108);
+    background-color: rgb(20, 20, 19);
+}
+
+.all_info {
+    display: none;
+}
+.charts1 {
+    display: none;
+}
 
 </style>
 
-<div class="container-fluid">
 
-    <h1>Results</h1>
+<h1><center>Results</center></h1>
+
+
+<div class="data_btns_container">
+    <div class="data_btns_group">
+        <button type="button" class="data_btns_inside" id="data1">Data1</button>
+        <button type="button" class="data_btns_inside" id="data2">Data2</button>
+        <button type="button" class="data_btns_inside" id="data3">Data3</button>
+    </div>
+</div>
+
+<div class="container-fluid all_info">
+
+
 
 
     {% if ing3|length < 1 %}
@@ -453,27 +517,14 @@
     {% endif %}
         
 
-    
-   
-    
-
-
-
 
 </div>
 
-    
+<div class="container-fluid charts1">
 
+<canvas id="myChart" width="400" height="400"></canvas>
 
-
-
-
-
-
-
-
-
-
+</div>
 
 
 {% endblock content %}
