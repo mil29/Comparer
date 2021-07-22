@@ -29,6 +29,10 @@
     text-decoration: underline;
     text-transform: lowercase;
 }
+.and {
+    color: rgb(181, 14, 14);
+    text-transform: uppercase;
+}
 
 </style>
 
@@ -57,7 +61,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="match_headings">Matched Ingredients:</h5>
-                            <p class="item_info">{{ ing1.0 }} and {{ ing2.0 }} both contain:</p>
+                            <p class="item_info">product 1:  {{ ing1.0 }} <span class="and"><br>AND<br></span> product 2:  {{ ing2.0 }} both contain:</p>
                                 {% for item in match1_2 %}
                                 <ul>
                                     <li>{{ item }}</li>
@@ -87,7 +91,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="match_headings">Matched Ingredients:</h5>
-                                <p class="item_info">{{ ing2.0 }} and {{ ing1.0 }} both contain:</p>
+                                <p class="item_info">product 2:  {{ ing2.0 }} <span class="and"><br>AND<br></span> product 1:  {{ ing1.0 }} both contain:</p>
                                 {% for item in match1_2 %}
                                 <ul>
                                     <li>{{ item }}</li>
@@ -121,14 +125,14 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="match_headings">Matched Ingredients:</h5>
-                                <p class="item_info">{{ ing1.0 }} and {{ ing2.0 }} both contain:</p>
+                                <p class="item_info">product 1:  {{ ing1.0 }} <span class="and"><br>AND<br></span> product 2:  {{ ing2.0 }} both contain:</p>
                                 {% for item in match1_2 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
 
-                                <p class="item_info">{{ ing1.0 }} and {{ ing3.0 }} both contain:</p>
+                                <p class="item_info">product 1:  {{ ing1.0 }} <span class="and"><br>AND<br></span> product 3:  {{ ing3.0 }} both contain:</p>
                                 {% for item in match1_3 %}
                                 <ul>
                                     <li>{{ item }}</li>
@@ -165,14 +169,14 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="match_headings">Matched Ingredients:</h5>
-                                <p class="item_info">{{ ing2.0 }} and {{ ing1.0 }} both contain:</p>
+                                <p class="item_info">product 2:  {{ ing2.0 }} <span class="and"><br>AND<br></span> product 1:  {{ ing1.0 }} both contain:</p>
                                 {% for item in match1_2 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
 
-                                <p class="item_info">{{ ing2.0 }} and {{ ing3.0 }} both contain:</p>
+                                <p class="item_info">product 2:  {{ ing2.0 }} <span class="and"><br>AND<br></span> product 3:  {{ ing3.0 }} both contain:</p>
                                 {% for item in match2_3 %}
                                 <ul>
                                     <li>{{ item }}</li>
@@ -209,14 +213,14 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="match_headings">Matched Ingredients:</h5>
-                                <p class="item_info">{{ ing3.0 }} and {{ ing1.0 }} both contain:</p>
+                                <p class="item_info">product 3:  {{ ing3.0 }} <span class="and"><br>AND<br></span> product 1:  {{ ing1.0 }} both contain:</p>
                                 {% for item in match1_3 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
 
-                                <p class="item_info">{{ ing3.0 }} and {{ ing2.0 }} both contain:</p>
+                                <p class="item_info">product 3:  {{ ing3.0 }} <span class="and"><br>AND<br></span> product 2:  {{ ing2.0 }} both contain:</p>
                                 {% for item in match2_3 %}
                                 <ul>
                                     <li>{{ item }}</li>
@@ -258,21 +262,21 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="match_headings">Matched Ingredients:</h5>
-                                <p class="item_info">{{ ing1.0 }} and {{ ing2.0 }} both contain:</p>
+                                <p class="item_info">product 1:  {{ ing1.0 }} <span class="and"><br>AND<br></span> product 2:  {{ ing2.0 }} both contain:</p>
                                 {% for item in match1_2 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
 
-                                <p class="item_info">{{ ing1.0 }} and {{ ing3.0 }} both contain:</p>
+                                <p class="item_info">product 1:  {{ ing1.0 }} <span class="and"><br>AND<br></span> product 3:  {{ ing3.0 }} both contain:</p>
                                 {% for item in match1_3 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
 
-                                <p class="item_info">{{ ing1.0 }} and {{ ing4.0 }} both contain:</p>
+                                <p class="item_info">product 1:  {{ ing1.0 }} <span class="and"><br>AND<br></span> product 4:  {{ ing4.0 }} both contain:</p>
                                 {% for item in match1_4 %}
                                 <ul>
                                     <li>{{ item }}</li>
@@ -309,21 +313,21 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="match_headings">Matched Ingredients:</h5>
-                                <p class="item_info">{{ ing2.0 }} and {{ ing1.0 }} both contain:</p>
+                                <p class="item_info">product 2:  {{ ing2.0 }} <span class="and"><br>AND<br></span> product 1:  {{ ing1.0 }} both contain:</p>
                                 {% for item in match1_2 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
 
-                                <p class="item_info">{{ ing2.0 }} and {{ ing3.0 }} both contain:</p>
+                                <p class="item_info">product 2:  {{ ing2.0 }} <span class="and"><br>AND<br></span> product 3:  {{ ing3.0 }} both contain:</p>
                                 {% for item in match2_3 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
 
-                                <p class="item_info">{{ ing2.0 }} and {{ ing4.0 }} both contain:</p>
+                                <p class="item_info">product 2:  {{ ing2.0 }} <span class="and"><br>AND<br></span> product 4:  {{ ing4.0 }} both contain:</p>
                                 {% for item in match2_4 %}
                                 <ul>
                                     <li>{{ item }}</li>
@@ -360,21 +364,21 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="match_headings">Matched Ingredients:</h5>
-                                <p class="item_info">{{ ing3.0 }} and {{ ing1.0 }} both contain:</p>
+                                <p class="item_info">product 3:  {{ ing3.0 }} <span class="and"><br>AND<br></span> product 1:  {{ ing1.0 }} both contain:</p>
                                 {% for item in match1_3 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
 
-                                <p class="item_info">{{ ing3.0 }} and {{ ing2.0 }} both contain:</p>
+                                <p class="item_info">product 3:  {{ ing3.0 }} <span class="and"><br>AND<br></span> product 2:  {{ ing2.0 }} both contain:</p>
                                 {% for item in match2_3 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
 
-                                <p class="item_info">{{ ing3.0 }} and {{ ing4.0 }} both contain:</p>
+                                <p class="item_info">product 3:  {{ ing3.0 }} <span class="and"><br>AND<br></span> product 4:  {{ ing4.0 }} both contain:</p>
                                 {% for item in match3_4 %}
                                 <ul>
                                     <li>{{ item }}</li>
@@ -413,21 +417,21 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="match_headings">Matched Ingredients:</h5>
-                                <p class="item_info">{{ ing4.0 }} and {{ ing1.0 }} both contain:</p>
+                                <p class="item_info">product 4:  {{ ing4.0 }} <span class="and"><br>AND<br></span> product 1:  {{ ing1.0 }} both contain:</p>
                                 {% for item in match1_4 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
 
-                                <p class="item_info">{{ ing4.0 }} and {{ ing2.0 }} both contain:</p>
+                                <p class="item_info">product 4:  {{ ing4.0 }} <span class="and"><br>AND<br></span> product 2:  {{ ing2.0 }} both contain:</p>
                                 {% for item in match2_4 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
 
-                                <p class="item_info">{{ ing4.0 }} and {{ ing3.0 }} both contain:</p>
+                                <p class="item_info">product 4:  {{ ing4.0 }} <span class="and"><br>AND<br></span> product 3:  {{ ing3.0 }} both contain:</p>
                                 {% for item in match3_4 %}
                                 <ul>
                                     <li>{{ item }}</li>

@@ -63,17 +63,17 @@ def compare_ingredients(request):
 
         if len(set2) >= 1 and len(set3) < 1:
             match1_2 = set1.intersection(set2)
-            print(f'Item 1 and Item 2 both have: {match1_2}')
+            # print(f'Item 1 and Item 2 both have: {match1_2}')
 
         if len(set3) >= 1 and len(set4) < 1:
             match1_2 = set1.intersection(set2)
             match1_3 = set1.intersection(set3)
             match2_3 = set2.intersection(set3)
             All_1_2_3 = set.intersection(set1, set2, set3)
-            print(f'Item 1 and Item 2 both have: {match1_2}')
-            print(f'Item 1 and Item 3 both have: {match1_3}')
-            print(f'Item 2 and Item 3 both have: {match2_3}')
-            print(f'All Items have: {All_1_2_3}')
+            # print(f'Item 1 and Item 2 both have: {match1_2}')
+            # print(f'Item 1 and Item 3 both have: {match1_3}')
+            # print(f'Item 2 and Item 3 both have: {match2_3}')
+            # print(f'All Items have: {All_1_2_3}')
 
         if len(set4) >= 1:
             match1_2 = set1.intersection(set2)
@@ -83,13 +83,13 @@ def compare_ingredients(request):
             match2_4 = set2.intersection(set4)
             match3_4 = set3.intersection(set4)
             All_1_2_3_4    = set.intersection(set1, set2, set3, set4)
-            print(f'Item 1 and Item 2 both have: {match1_2}')
-            print(f'Item 1 and Item 3 both have: {match1_3}')
-            print(f'Item 1 and Item 4 both have: {match1_4}')
-            print(f'Item 2 and Item 3 both have: {match2_3}')
-            print(f'Item 2 and Item 4 both have: {match2_4}')
-            print(f'Item 3 and Item 4 both have: {match3_4}')
-            print(f'All Items have: {All_1_2_3_4}')
+            # print(f'Item 1 and Item 2 both have: {match1_2}')
+            # print(f'Item 1 and Item 3 both have: {match1_3}')
+            # print(f'Item 1 and Item 4 both have: {match1_4}')
+            # print(f'Item 2 and Item 3 both have: {match2_3}')
+            # print(f'Item 2 and Item 4 both have: {match2_4}')
+            # print(f'Item 3 and Item 4 both have: {match3_4}')
+            # print(f'All Items have: {All_1_2_3_4}')
 
 
         inglist = zip(ing1, ing2, ing3, ing4)
