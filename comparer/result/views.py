@@ -3,12 +3,15 @@ from django.http import HttpResponse
 
 
 
+
+
 def home(request):
     return render(request, 'result/home.html')
 
 
 
-def compare_ingredients(request):
+def compare(request):
+
 
     if request.method == 'POST':
 
@@ -24,6 +27,19 @@ def compare_ingredients(request):
         ing3list = []
         ing4list = []
 
+
+        title = []
+        for item in ing1[0:1]:
+            title.append(item)
+        for item in ing2[0:1]:
+            title.append(item)
+        for item in ing3[0:1]:
+            title.append(item)
+        for item in ing4[0:1]:
+            title.append(item)
+        print(title)
+
+  
         #  Here each request.POST is looped through and a set for each is created  
 
 
@@ -94,6 +110,7 @@ def compare_ingredients(request):
 
         inglist = zip(ing1, ing2, ing3, ing4)
 
+    
         if len(ing3) < 1:
 
             context0 = {
@@ -101,6 +118,7 @@ def compare_ingredients(request):
                 'ing2': ing2,
                 'inglist': inglist,
                 'match1_2': match1_2,
+                'title': title,
             }
 
             return render(request, 'result/results.html', context0)
@@ -116,6 +134,7 @@ def compare_ingredients(request):
                 'match1_3': match1_3,
                 'match2_3': match2_3,
                 'All_1_2_3': All_1_2_3,
+                'title': title,
             }
 
             return render(request, 'result/results.html', context1)
@@ -135,6 +154,7 @@ def compare_ingredients(request):
                 'match2_4': match2_4,
                 'match3_4': match3_4,
                 'All_1_2_3_4': All_1_2_3_4,
+                'title': title,
             }
 
             return render(request, 'result/results.html', context2)

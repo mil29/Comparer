@@ -11,8 +11,9 @@
 <body>
 
     {% block content %}{% endblock %}
-</body>
-</html>
+    
+
+
 
 
 
@@ -28,6 +29,12 @@
 
 <!-- JS Files -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="{% static 'js/custom.js' %}"></script>
 <script src="{% static 'js/mycharts.js' %}"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+{% block jsfiles %}{% endblock jsfiles %}
+
+</body>
+</html>

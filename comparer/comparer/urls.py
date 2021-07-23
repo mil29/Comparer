@@ -7,7 +7,7 @@ from result import views as result_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', result_views.home, name='home'),
-    path('compare-ingredients/', result_views.compare_ingredients, name='compare_ingredients'),
+    path('compare/', result_views.compare, name='compare'),
 ]
 
 

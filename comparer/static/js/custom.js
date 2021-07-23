@@ -47,4 +47,16 @@ $("button.remove_item").on("click",function(){
     })
 
 
+// function to display a container after user clicks on data buttons at top of page
+$('#data1').click(function () {
+    $('#all_info').show();
+    $('#charts1').hide();
+});
+$('#data2').click(function () {
+    $('#all_info').hide();
+    $('#charts1').show();
+});
+
+
+
 })
