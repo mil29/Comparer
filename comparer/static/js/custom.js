@@ -53,8 +53,8 @@ $('#data1').click(function () {
     $('#charts1').hide();
 });
 $('#data2').click(function () {
-    $('#all_info').hide();
     $('#charts1').show();
+    $('#all_info').hide();
 });
 
 

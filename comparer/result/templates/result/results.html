@@ -516,30 +516,33 @@
 
 
 var ctx = document.getElementById('myChart').getContext('2d');
+
+// Global Options
+Chart.defaults.font.size = 16;
+
+
 var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {chart.js
-        labels: [{% for item in titles %}'{{ item }}',{% endfor %}],
+    type: 'bar', // bar, pie, line, dougnut, radar, polarArea
+    data: {
+        labels: [{% for item in title %} '{{ item }}', {% endfor %}],
         datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            label: 'Number of Ingredients',
+            data: [{% for number in ingredientCount %} '{{ number }}', {% endfor %}],
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+                'rgba(3, 102, 102)',
+                'rgba(53, 143, 128)',
+                'rgba(103, 185, 154)',
+                'rgba(153, 226, 180)',
             ],
             borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
+                'rgba(108, 117, 125)',
+                'rgba(108, 117, 125)',
+                'rgba(108, 117, 125)',
+                'rgba(108, 117, 125)',
             ],
-            borderWidth: 1
+            borderWidth: 1,
+            hoverBorderWidth: 2,
+            hoverBorderColor: 'rgba(52, 58, 64)',
         }]
     },
     options: {
@@ -547,8 +550,11 @@ var myChart = new Chart(ctx, {
             y: {
                 beginAtZero: true
             }
+        },
+        plugins: {
+            legend: true,
         }
-    }
+    },
 });
 
 

@@ -28,6 +28,7 @@ def compare(request):
         ing4list = []
 
 
+        #  data for the charts to get the title name of product for the labels array in chart.js
         title = []
         for item in ing1[0:1]:
             title.append(item)
@@ -38,6 +39,13 @@ def compare(request):
         for item in ing4[0:1]:
             title.append(item)
         print(title)
+
+
+
+
+
+
+
 
   
         #  Here each request.POST is looped through and a set for each is created  
@@ -108,6 +116,17 @@ def compare(request):
             # print(f'All Items have: {All_1_2_3_4}')
 
 
+        #  for charts to count total number of ingredients in each product for the data array in chart.js
+        ingredientCount = []
+        ingredientCount.append(len(ing1list))
+        ingredientCount.append(len(ing2list))
+        if len(ing3list) > 1:         
+            ingredientCount.append(len(ing3list))
+        if len(ing4list) > 1:
+            ingredientCount.append(len(ing4list))
+        print(ingredientCount)
+
+
         inglist = zip(ing1, ing2, ing3, ing4)
 
     
@@ -119,6 +138,7 @@ def compare(request):
                 'inglist': inglist,
                 'match1_2': match1_2,
                 'title': title,
+                'ingredientCount': ingredientCount,
             }
 
             return render(request, 'result/results.html', context0)
@@ -135,6 +155,7 @@ def compare(request):
                 'match2_3': match2_3,
                 'All_1_2_3': All_1_2_3,
                 'title': title,
+                'ingredientCount': ingredientCount,
             }
 
             return render(request, 'result/results.html', context1)
@@ -155,6 +176,7 @@ def compare(request):
                 'match3_4': match3_4,
                 'All_1_2_3_4': All_1_2_3_4,
                 'title': title,
+                'ingredientCount': ingredientCount,
             }
 
             return render(request, 'result/results.html', context2)
