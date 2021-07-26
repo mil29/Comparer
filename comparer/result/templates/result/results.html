@@ -65,13 +65,14 @@
     display: none;
 }
 
+
 </style>
 
 
 <h1><center>Results</center></h1>
 
 
-<div class="data_btns_container">
+<div class="data_btns_container">                                   <!-- Data buttons at top of page  -->
     <div class="data_btns_group">
         <button type="button" class="data_btns_inside" id="data1">Data1</button>
         <button type="button" class="data_btns_inside" id="data2">Data2</button>
@@ -79,13 +80,28 @@
     </div>
 </div>
 
-<div class="container charts" id="charts1">
 
-<canvas id="myChart" width="400" height="200"></canvas>
+
+
+<div class="container charts" id="charts1">                    <!-- Charts first one is bar second is pie -->
+
+<canvas id="myChart1" width="200" height="100"></canvas>
+
+<br><br>
+
+<canvas id="myChart2" width="50" height="50"></canvas>
 
 </div>
 
-<div class="container-fluid" id="all_info">
+
+
+
+
+
+
+
+
+<div class="container-fluid" id="all_info">                             <!-- main data1 results html    -->
 
 
 
@@ -111,12 +127,18 @@
                         <div class="card-body">
                             <h5 class="match_headings">Matched Ingredients:</h5>
                             <p class="item_info">product 1:  {{ ing1.0 }} <span class="and"><br>AND<br></span> product 2:  {{ ing2.0 }} both contain:</p>
+                            {% if match1_2|length >= 1 %}
                                 {% for item in match1_2 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
-                            <h5 class="match_headings">Unique Ingredients:</h5>
+                            {% else %}
+                            <ul>
+                                <li>None</li>
+                            </ul>
+                            {% endif %}
+                           
                             
                         </div>
                     </div>
@@ -141,12 +163,18 @@
                         <div class="card-body">
                             <h5 class="match_headings">Matched Ingredients:</h5>
                                 <p class="item_info">product 2:  {{ ing2.0 }} <span class="and"><br>AND<br></span> product 1:  {{ ing1.0 }} both contain:</p>
+                                {% if match1_2|length >= 1 %}
                                 {% for item in match1_2 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
-                            <h5 class="match_headings">Unique Ingredients:</h5>
+                                {% else %}
+                                <ul>
+                                <li>None</li>
+                                </ul>
+                                {% endif %}
+                            
                             
                         </div>
                     </div>
@@ -175,26 +203,38 @@
                         <div class="card-body">
                             <h5 class="match_headings">Matched Ingredients:</h5>
                                 <p class="item_info">product 1:  {{ ing1.0 }} <span class="and"><br>AND<br></span> product 2:  {{ ing2.0 }} both contain:</p>
+                                {% if match1_2|length >= 1 %}
                                 {% for item in match1_2 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
-
+                                {% else %}
+                                <ul>
+                                    <li>None</li>
+                                </ul>
+                                {% endif %}
                                 <p class="item_info">product 1:  {{ ing1.0 }} <span class="and"><br>AND<br></span> product 3:  {{ ing3.0 }} both contain:</p>
+                                {% if match1_3|length >= 1 %}
                                 {% for item in match1_3 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
-
+                                {% else %}
+                                <ul>
+                                    <li>None</li>
+                                </ul>
+                                {% endif %}
+                                {% if All_1_2_3|length >= 1 %}
                                 <p class="item_info">All Items contain:</p>
                                 {% for item in All_1_2_3 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
-                            <h5 class="match_headings">Unique Ingredients:</h5>
+                                {% endif %}
+                           
                             
                         </div>
                     </div>
@@ -219,26 +259,38 @@
                         <div class="card-body">
                             <h5 class="match_headings">Matched Ingredients:</h5>
                                 <p class="item_info">product 2:  {{ ing2.0 }} <span class="and"><br>AND<br></span> product 1:  {{ ing1.0 }} both contain:</p>
+                                {% if match1_2|length >= 1 %}
                                 {% for item in match1_2 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
-
+                                {% else %}
+                                <ul>
+                                    <li>None</li>
+                                </ul>
+                                {% endif %}
                                 <p class="item_info">product 2:  {{ ing2.0 }} <span class="and"><br>AND<br></span> product 3:  {{ ing3.0 }} both contain:</p>
+                                {% if match2_3|length >= 1 %}
                                 {% for item in match2_3 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
-
+                                {% else %}
+                                <ul>
+                                    <li>None</li>
+                                </ul>
+                                {% endif %}
+                                {% if All_1_2_3|length >= 1 %}
                                 <p class="item_info">All Items contain:</p>
                                 {% for item in All_1_2_3 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
-                            <h5 class="match_headings">Unique Ingredients:</h5>
+                                {% endif %}
+                            
                             
                         </div>
                     </div>
@@ -263,26 +315,38 @@
                         <div class="card-body">
                             <h5 class="match_headings">Matched Ingredients:</h5>
                                 <p class="item_info">product 3:  {{ ing3.0 }} <span class="and"><br>AND<br></span> product 1:  {{ ing1.0 }} both contain:</p>
+                                {% if match1_3|length >= 1 %}
                                 {% for item in match1_3 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
-
+                                {% else %}
+                                <ul>
+                                    <li>None</li>
+                                </ul>
+                                {% endif %}
                                 <p class="item_info">product 3:  {{ ing3.0 }} <span class="and"><br>AND<br></span> product 2:  {{ ing2.0 }} both contain:</p>
+                                {% if match2_3|length >= 1 %}
                                 {% for item in match2_3 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
-
+                                {% else %}
+                                <ul>
+                                    <li>None</li>
+                                </ul>
+                                {% endif %}
+                                {% if All_1_2_3|length >= 1 %}
                                 <p class="item_info">All Items contain:</p>
                                 {% for item in All_1_2_3 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
-                            <h5 class="match_headings">Unique Ingredients:</h5>
+                                {% endif %}
+                            
                             
                         </div>
                     </div>
@@ -312,33 +376,50 @@
                         <div class="card-body">
                             <h5 class="match_headings">Matched Ingredients:</h5>
                                 <p class="item_info">product 1:  {{ ing1.0 }} <span class="and"><br>AND<br></span> product 2:  {{ ing2.0 }} both contain:</p>
+                                {% if match1_2|length >= 1 %}
                                 {% for item in match1_2 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
-
+                                {% else %}
+                                <ul>
+                                    <li>None</li>
+                                </ul>
+                                {% endif %}
                                 <p class="item_info">product 1:  {{ ing1.0 }} <span class="and"><br>AND<br></span> product 3:  {{ ing3.0 }} both contain:</p>
+                                {% if match1_3|length >= 1 %}
                                 {% for item in match1_3 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
-
+                                {% else %}
+                                <ul>
+                                    <li>None</li>
+                                </ul>
+                                {% endif %}
                                 <p class="item_info">product 1:  {{ ing1.0 }} <span class="and"><br>AND<br></span> product 4:  {{ ing4.0 }} both contain:</p>
+                                {% if match1_4|length >= 1 %}
                                 {% for item in match1_4 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
-
+                                {% else %}
+                                <ul>
+                                    <li>None</li>
+                                </ul>
+                                {% endif %}
+                                {% if All_1_2_3_4|length >= 1 %}
                                 <p class="item_info">All Items contain:</p>
                                 {% for item in All_1_2_3_4 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
-                            <h5 class="match_headings">Unique Ingredients:</h5>
+                                {% endif %}
+                           
                             
                         </div>
                     </div>
@@ -363,33 +444,50 @@
                         <div class="card-body">
                             <h5 class="match_headings">Matched Ingredients:</h5>
                                 <p class="item_info">product 2:  {{ ing2.0 }} <span class="and"><br>AND<br></span> product 1:  {{ ing1.0 }} both contain:</p>
+                                {% if match1_2|length >= 1 %}
                                 {% for item in match1_2 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
-
+                                {% else %}
+                                <ul>
+                                    <li>None</li>
+                                </ul>
+                                {% endif %}
                                 <p class="item_info">product 2:  {{ ing2.0 }} <span class="and"><br>AND<br></span> product 3:  {{ ing3.0 }} both contain:</p>
+                                {% if match2_3|length >= 1 %}
                                 {% for item in match2_3 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
-
+                                {% else %}
+                                <ul>
+                                    <li>None</li>
+                                </ul>
+                                {% endif %}
                                 <p class="item_info">product 2:  {{ ing2.0 }} <span class="and"><br>AND<br></span> product 4:  {{ ing4.0 }} both contain:</p>
+                                {% if match2_4|length >= 1 %}
                                 {% for item in match2_4 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
-
+                                {% else %}
+                                <ul>
+                                    <li>None</li>
+                                </ul>
+                                {% endif %}
+                                {% if All_1_2_3_4|length >= 1 %}
                                 <p class="item_info">All Items contain:</p>
                                 {% for item in All_1_2_3_4 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
-                            <h5 class="match_headings">Unique Ingredients:</h5>
+                                {% endif %}
+                            
                             
                         </div>
                     </div>
@@ -414,33 +512,50 @@
                         <div class="card-body">
                             <h5 class="match_headings">Matched Ingredients:</h5>
                                 <p class="item_info">product 3:  {{ ing3.0 }} <span class="and"><br>AND<br></span> product 1:  {{ ing1.0 }} both contain:</p>
+                                {% if match1_3|length >= 1 %}
                                 {% for item in match1_3 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
-
+                                {% else %}
+                                <ul>
+                                    <li>None</li>
+                                </ul>
+                                {% endif %}
                                 <p class="item_info">product 3:  {{ ing3.0 }} <span class="and"><br>AND<br></span> product 2:  {{ ing2.0 }} both contain:</p>
+                                {% if match2_3|length >= 1 %}
                                 {% for item in match2_3 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
-
+                                {% else %}
+                                <ul>
+                                    <li>None</li>
+                                </ul>
+                                {% endif %}
                                 <p class="item_info">product 3:  {{ ing3.0 }} <span class="and"><br>AND<br></span> product 4:  {{ ing4.0 }} both contain:</p>
+                                {% if match3_4|length >= 1 %}
                                 {% for item in match3_4 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
-
+                                {% else %}
+                                <ul>
+                                    <li>None</li>
+                                </ul>
+                                {% endif %}
+                                {% if All_1_2_3_4|length >= 1 %}
                                 <p class="item_info">All Items contain:</p>
                                 {% for item in All_1_2_3_4 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
-                            <h5 class="match_headings">Unique Ingredients:</h5>
+                                {% endif %}
+                            
                             
                         </div>
                     </div>
@@ -467,33 +582,51 @@
                         <div class="card-body">
                             <h5 class="match_headings">Matched Ingredients:</h5>
                                 <p class="item_info">product 4:  {{ ing4.0 }} <span class="and"><br>AND<br></span> product 1:  {{ ing1.0 }} both contain:</p>
+                                {% if match1_4|length >= 1 %}
                                 {% for item in match1_4 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
-
+                                {% else %}
+                                <ul>
+                                    <li>None</li>
+                                </ul>
+                                {% endif %}
                                 <p class="item_info">product 4:  {{ ing4.0 }} <span class="and"><br>AND<br></span> product 2:  {{ ing2.0 }} both contain:</p>
+                                {% if match2_4|length >= 1 %}
                                 {% for item in match2_4 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
-
+                                {% else %}
+                                <ul>
+                                    <li>None</li>
+                                </ul>
+                                {% endif %}
                                 <p class="item_info">product 4:  {{ ing4.0 }} <span class="and"><br>AND<br></span> product 3:  {{ ing3.0 }} both contain:</p>
+                                {% if match3_4|length >= 1 %}
                                 {% for item in match3_4 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
+                                {% else %}
+                                <ul>
+                                    <li>None</li>
+                                </ul>
+                                {% endif %}
 
+                                {% if All_1_2_3_4|length >= 1 %}
                                 <p class="item_info">All Items contain:</p>
                                 {% for item in All_1_2_3_4 %}
                                 <ul>
                                     <li>{{ item }}</li>
                                 </ul>
                                 {% endfor %}
-                            <h5 class="match_headings">Unique Ingredients:</h5>
+                                {% endif %}
+                            
                             
                         </div>
                     </div>
@@ -515,16 +648,17 @@
 
 
 
-var ctx = document.getElementById('myChart').getContext('2d');
+var ctx1 = document.getElementById('myChart1').getContext('2d');   ////////////////    Chart 1   //////////////
+
 
 // Global Options
 Chart.defaults.font.size = 16;
 
-
-var myChart = new Chart(ctx, {
+// Chart1 config 
+var config1 = {
     type: 'bar', // bar, pie, line, dougnut, radar, polarArea
     data: {
-        labels: [{% for item in title %} '{{ item }}', {% endfor %}],
+        labels: [{% for item in mainTitle %} '{{ item }}', {% endfor %}],
         datasets: [{
             label: 'Number of Ingredients',
             data: [{% for number in ingredientCount %} '{{ number }}', {% endfor %}],
@@ -546,15 +680,107 @@ var myChart = new Chart(ctx, {
         }]
     },
     options: {
+        animation: {
+            duration: 3000,
+        },
         scales: {
             y: {
                 beginAtZero: true
             }
         },
         plugins: {
-            legend: true,
+            legend: {
+                display: false,
+            },
+            title: {
+                display: true,
+                text: "Total Number of Ingredients"
+            },
+            }
         }
+};
+
+var chart1 = new Chart(ctx1, config1);
+
+
+$('#data2').click(function(){
+
+    setTimeout(
+        function(){
+            chart1.destroy();
+            chart1 = new Chart(ctx1, config1);
+        }, 150);
+});
+
+
+
+var ctx2 = document.getElementById('myChart2').getContext('2d');   ////////////////    Chart 2   ////////////////
+
+// Global Options
+Chart.defaults.font.size = 16;
+
+// Chart1 config 
+var config2 = {
+    type: 'pie', // bar, pie, line, dougnut, radar, polarArea
+    data: {
+        labels: [{% for name in prod_name %} '{{ name }}', {% endfor %}],
+        datasets: [{
+            label: 'Number of Ingredients',
+            data: [{% for count in count_value %} '{{ count }}', {% endfor %}],
+            backgroundColor: [
+                'rgba(217, 237, 146)',
+                'rgba(181, 228, 140)',
+                'rgba(153, 217, 140)',
+                'rgba(118, 200, 147)',
+                'rgba(82, 182, 154)',
+                'rgba(52, 160, 164)',
+                'rgba(22, 138, 173)',
+                'rgba(26, 117, 159)',
+                'rgba(30, 96, 145)',
+                'rgba(24, 78, 119)',
+            ],
+            borderColor: [
+                'rgba(108, 117, 125)',
+                'rgba(108, 117, 125)',
+                'rgba(108, 117, 125)',
+                'rgba(108, 117, 125)',
+            ],
+            borderWidth: 1,
+            hoverBorderWidth: 2,
+            hoverBorderColor: 'rgba(52, 58, 64)',
+        }]
     },
+    options: {
+        animation: {
+            duration: 3000,
+        },
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        },
+        plugins: {
+            legend: {
+                display: true,
+                position: 'right',
+            },
+            title: {
+                display: true,
+                text: "Most common ingredients"
+            },
+            }
+        }
+};
+
+var chart2 = new Chart(ctx2, config2);
+
+$('#data2').click(function(){
+
+    setTimeout(
+        function(){
+            chart2.destroy();
+            chart2 = new Chart(ctx2, config2);
+        }, 150);
 });
 
 

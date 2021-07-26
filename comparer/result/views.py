@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from collections import Counter
 
 
 
@@ -38,7 +39,16 @@ def compare(request):
             title.append(item)
         for item in ing4[0:1]:
             title.append(item)
-        print(title)
+        # print(title)
+
+
+        #  Grabbing first 2 words from product name 
+        mainTitle = []
+        for name in title:
+            splitTitle = name.replace("'", "").split(' ')
+            joined = " ".join(splitTitle[0:2])
+            mainTitle.append(joined)
+        # print(mainTitle)
 
 
 
@@ -124,12 +134,75 @@ def compare(request):
             ingredientCount.append(len(ing3list))
         if len(ing4list) > 1:
             ingredientCount.append(len(ing4list))
-        print(ingredientCount)
+        # print(ingredientCount)
 
 
         inglist = zip(ing1, ing2, ing3, ing4)
 
-    
+        # Works out the most common ingredients across all products , the more frequent a specific ingredients comes in a list the higher the percentage in the pie chart
+        common1 = []
+        if len(ing3) < 1:
+            for item in match1_2:
+                common1.append(item)
+            common_count = Counter(common1)
+            prod_name = []
+            count_value = []
+            for key, value in common_count.items():
+                prod_name.append(key)
+                count_value.append(value)
+            # print(common_count)
+        # print(common1)
+
+        common2 = []
+        if len(ing3) > 1 and len(ing4) < 1:
+            for item1 in match1_2:
+                common2.append(item1)
+            for item2 in match1_3:
+                common2.append(item2)
+            for item3 in match2_3:
+                common2.append(item3)
+            for item4 in All_1_2_3:
+                common2.append(item4)
+            common_count = Counter(common2)
+            prod_name = []
+            count_value = []
+            for key, value in common_count.items():
+                prod_name.append(key)
+                count_value.append(value)
+        # print(common2)
+
+        common3 = []
+        if len(ing4) > 1:
+            for item1 in match1_2:
+                common3.append(item1)
+            for item2 in match1_3:
+                common3.append(item2)  
+            for item3 in match1_4:
+                common3.append(item3)  
+            for item4 in match2_3:
+                common3.append(item4)  
+            for item5 in match2_4:
+                common3.append(item5)  
+            for item6 in match3_4:
+                common3.append(item6)  
+            for item7 in All_1_2_3_4:
+                common3.append(item7)  
+
+            common_count = Counter(common3)
+            prod_name = []
+            count_value = []
+            for key, value in common_count.items():
+                prod_name.append(key)
+                count_value.append(value)
+            # print(common_count)
+            
+        # print(common3)
+
+
+        
+
+
+        # Different contexts depending on how many instances of compare forms there are in the compare html page 
         if len(ing3) < 1:
 
             context0 = {
@@ -139,6 +212,9 @@ def compare(request):
                 'match1_2': match1_2,
                 'title': title,
                 'ingredientCount': ingredientCount,
+                'mainTitle': mainTitle,
+                'prod_name': prod_name,
+                'count_value': count_value
             }
 
             return render(request, 'result/results.html', context0)
@@ -156,6 +232,9 @@ def compare(request):
                 'All_1_2_3': All_1_2_3,
                 'title': title,
                 'ingredientCount': ingredientCount,
+                'mainTitle': mainTitle,
+                'prod_name': prod_name,
+                'count_value': count_value
             }
 
             return render(request, 'result/results.html', context1)
@@ -177,6 +256,9 @@ def compare(request):
                 'All_1_2_3_4': All_1_2_3_4,
                 'title': title,
                 'ingredientCount': ingredientCount,
+                'mainTitle': mainTitle,
+                'prod_name': prod_name,
+                'count_value': count_value
             }
 
             return render(request, 'result/results.html', context2)
