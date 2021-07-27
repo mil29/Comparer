@@ -652,7 +652,9 @@ var ctx1 = document.getElementById('myChart1').getContext('2d');   /////////////
 
 
 // Global Options
-Chart.defaults.font.size = 16;
+Chart.defaults.plugins.title.font.size = 22;
+Chart.defaults.plugins.title.font.weight = 300;
+
 
 // Chart1 config 
 var config1 = {
@@ -694,10 +696,10 @@ var config1 = {
             },
             title: {
                 display: true,
-                text: "Total Number of Ingredients"
+                text: "Total Number of Ingredients",
             },
-            }
-        }
+            },
+        },
 };
 
 var chart1 = new Chart(ctx1, config1);
@@ -717,7 +719,7 @@ $('#data2').click(function(){
 var ctx2 = document.getElementById('myChart2').getContext('2d');   ////////////////    Chart 2   ////////////////
 
 // Global Options
-Chart.defaults.font.size = 16;
+// Chart.defaults.font.size = 16;
 
 // Chart1 config 
 var config2 = {
@@ -763,6 +765,11 @@ var config2 = {
             legend: {
                 display: true,
                 position: 'right',
+                labels: {
+                    font: {
+                        size: 12,
+                    },
+                }
             },
             title: {
                 display: true,
