@@ -57,13 +57,24 @@
     background-color: rgb(54, 58, 66);
 }
 .data_btns_inside:hover {
-    color: rgb(11, 141, 108);
+    color: rgb(195, 247, 76);
     background-color: rgb(20, 20, 19);
 }
 
 #charts1 {
     display: none;
 }
+#five {
+    display: none;
+}
+.top_five_title {
+    text-align: center;
+}
+.topFiveCard {
+    padding: 0%;
+    margin-bottom: 10px;
+}
+
 
 
 </style>
@@ -74,13 +85,87 @@
 
 <div class="data_btns_container">                                   <!-- Data buttons at top of page  -->
     <div class="data_btns_group">
-        <button type="button" class="data_btns_inside" id="data1">Data1</button>
-        <button type="button" class="data_btns_inside" id="data2">Data2</button>
-        <button type="button" class="data_btns_inside" id="data3">Data3</button>
+        <button type="button" class="data_btns_inside" id="data1">All INFO</button>
+        <button type="button" class="data_btns_inside" id="data2">CHARTS</button>
+        <button type="button" class="data_btns_inside" id="data3">TOP FIVE</button>
     </div>
 </div>
 
+<div class="container top_five_container" id="five">
+    <h3 class="top_five_title">Top 5 Ingredients</h3>
+    <div class="row row-cols-2">
+        <div class="col">
 
+
+            <div class="card topFiveCard">
+                <div class="card-body">
+                        <h5>{{ ing1.0 }}</h5>
+                        <ol>
+                            {% for item in ing1list %}
+                                {% if forloop.counter < 6 %}
+                                    <li>{{ item }}</li> <br>
+                                {% endif %}
+                            {% endfor %}
+                        </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card topFiveCard">
+                <div class="card-body">
+                        <h5>{{ ing2.0 }}</h5>
+                        <ol>
+                            {% for item in ing2list %}
+                                {% if forloop.counter < 6 %}
+                                    <li>{{ item }}</li> <br>
+                                {% endif %}
+                            {% endfor %}
+                        </ol>
+                </div>
+            </div>
+        </div>
+
+        {% if ing3|length > 1 %}
+        <div class="col">
+            <div class="card topFiveCard">
+                <div class="card-body">
+                        <h5>{{ ing3.0 }}</h5>
+                        <ol>
+                            {% for item in ing3list %}
+                                {% if forloop.counter < 6 %}
+                                    <li>{{ item }}</li> <br>
+                                {% endif %}
+                            {% endfor %}
+                        </ol>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if ing4|length > 1 %}
+        <div class="col">
+            <div class="card topFiveCard">
+                <div class="card-body">
+                        <h5>{{ ing4.0 }}</h5>
+                        <ol>
+                            {% for item in ing4list %}
+                                {% if forloop.counter < 6 %}
+                                    <li>{{ item }}</li> <br>
+                                {% endif %}
+                            {% endfor %}
+                        </ol>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        
+
+
+    </div>
+
+
+</div>
 
 
 <div class="container charts" id="charts1">                    <!-- Charts first one is bar second is pie -->
@@ -92,7 +177,6 @@
 <canvas id="myChart2" width="50" height="50"></canvas>
 
 </div>
-
 
 
 
@@ -178,8 +262,9 @@
                             
                         </div>
                     </div>
-    </div>
-    {% endif %}
+            </div>
+        </div>
+        {% endif %}
 
 
     {% if ing4|length < 1 and ing3|length > 1 %}
@@ -294,7 +379,7 @@
                             
                         </div>
                     </div>
-            </div>
+                </div>
 
             <div class="col mb-4">
             {% for item in ing3 %}
@@ -350,7 +435,7 @@
                             
                         </div>
                     </div>
-            </div>
+                </div>
     </div>
     {% endif %}
 
@@ -637,7 +722,6 @@
 
 
 </div>
-
 
 
 {% endblock content %}

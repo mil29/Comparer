@@ -214,7 +214,11 @@ def compare(request):
                 'ingredientCount': ingredientCount,
                 'mainTitle': mainTitle,
                 'prod_name': prod_name,
-                'count_value': count_value
+                'count_value': count_value,
+                'ing1list': ing1list,
+                'ing2list': ing2list,
+                'ing3list': ing3list,
+                'ing4list': ing4list,
             }
 
             return render(request, 'result/results.html', context0)
@@ -234,7 +238,11 @@ def compare(request):
                 'ingredientCount': ingredientCount,
                 'mainTitle': mainTitle,
                 'prod_name': prod_name,
-                'count_value': count_value
+                'count_value': count_value,
+                'ing1list': ing1list,
+                'ing2list': ing2list,
+                'ing3list': ing3list,
+                'ing4list': ing4list,
             }
 
             return render(request, 'result/results.html', context1)
@@ -258,7 +266,11 @@ def compare(request):
                 'ingredientCount': ingredientCount,
                 'mainTitle': mainTitle,
                 'prod_name': prod_name,
-                'count_value': count_value
+                'count_value': count_value,
+                'ing1list': ing1list,
+                'ing2list': ing2list,
+                'ing3list': ing3list,
+                'ing4list': ing4list,
             }
 
             return render(request, 'result/results.html', context2)

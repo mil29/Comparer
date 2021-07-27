@@ -51,12 +51,17 @@ $("button.remove_item").on("click",function(){
 $('#data1').click(function () {
     $('#all_info').show();
     $('#charts1').hide();
+    $('#five').hide();
 });
 $('#data2').click(function () {
     $('#charts1').show();
     $('#all_info').hide();
+    $('#five').hide();
 });
-
-
+$('#data3').click(function () {
+    $('#five').show();
+    $('#charts1').hide();
+    $('#all_info').hide();
+});
 
 })
