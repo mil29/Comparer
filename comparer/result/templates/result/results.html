@@ -91,7 +91,8 @@
     </div>
 </div>
 
-<div class="container top_five_container" id="five">
+
+<div class="container top_five_container" id="five">                                 <!--   ////////////////////// Top five ingredients container  //////////////-->
     <h3 class="top_five_title">Top 5 Ingredients</h3>
     <div class="row row-cols-2">
         <div class="col">
@@ -160,21 +161,18 @@
         </div>
         {% endif %}
         
-
-
     </div>
-
-
 </div>
 
 
-<div class="container charts" id="charts1">                    <!-- Charts first one is bar second is pie -->
 
-<canvas id="myChart1" width="200" height="100"></canvas>
+<div class="container charts" id="charts1">                  <!-- Charts first one is bar second is pie -->
+
+<canvas id="myChart1" width="200" height="100"></canvas>                        <!--  BAR CHART FOR NUMBER OF INGREDIENTS IN EACH PRODUCT -->
 
 <br><br>
 
-<canvas id="myChart2" width="50" height="50"></canvas>
+<canvas id="myChart2" width="50" height="50"></canvas>      <!-- PIE CHART FOR MOST COMMON INGREDIENTS ACROSS ALL PRODUCTS -->
 
 </div>
 
@@ -182,10 +180,7 @@
 
 
 
-
-
-
-<div class="container-fluid" id="all_info">                             <!-- main data1 results html    -->
+<div class="container-fluid" id="all_info">          <!-- ////////////////////////   main data1 results html   ///////////////////////////    -->
 
 
 
@@ -732,7 +727,7 @@
 
 
 
-var ctx1 = document.getElementById('myChart1').getContext('2d');   ////////////////    Chart 1   //////////////
+var ctx1 = document.getElementById('myChart1').getContext('2d');                    ////////////////    Chart 1   //////////////
 
 
 // Global Options
