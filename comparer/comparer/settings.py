@@ -30,6 +30,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['listcomparer.herokuapp.com']
 
+#test
 
 # Application definition
 
