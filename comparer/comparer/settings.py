@@ -22,13 +22,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-# SECRET_KEY = 'django-insecure-&dapocp0en(j%(a(hp%ep3n&c-5yif21pn#!xv*ur-yf+3q3bh'
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = 'django-insecure-&dapocp0en(j%(a(hp%ep3n&c-5yif21pn#!xv*ur-yf+3q3bh'
+# SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://listcomparer.herokuapp.com', '127.0.0.1:8000']
+ALLOWED_HOSTS = ['listcomparer.herokuapp.com']
 
 
 # Application definition
@@ -128,8 +128,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 # STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_cdn', 'static_root')
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_cdn', 'media_root')
+
 
 
 LOGIN_REDIRECT_URL = 'home'
