@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-&dapocp0en(j%(a(hp%ep3n&c-5yif21pn#!xv*ur-yf+3q3bh
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['listcomparer.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 
