@@ -1,7 +1,7 @@
 
 # ListComparer
 
-Application to compare ingredients for multiple products and present the data in text or chart format. 
+Application to compare ingredients for multiple products and present the data in text or charts. 
 
 ## Authors
 
