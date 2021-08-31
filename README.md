@@ -1,19 +1,15 @@
 
 # ListComparer
 
-Application to compare ingredients for multiple products and present the data in text or charts. 
+Application to compare ingredients for multiple products and present the data in text or charts. Shows common ingredients used in all products and also shows matching ingredients with specific products. Lists the top 5 ingredietns in each product. Results are displayed using Chart.js.  
 
-## Authors
 
-- [@Mil29](https://github.com/mil29/Comparer)
-
-  
 ## Demo
 
 https://listcomparer.herokuapp.com
 
   
-## Tech Stack
+## Technologies used
 
 * Python
 * Django
